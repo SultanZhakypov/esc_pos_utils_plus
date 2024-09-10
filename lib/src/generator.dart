@@ -609,9 +609,9 @@ class Generator {
 
       image = copyResize(
         imgSrc,
-        height: imgSrc.height,
+        // height: imgSrc.height,
         width: size,
-        interpolation: Interpolation.cubic,
+        interpolation: Interpolation.nearest,
       );
     } else {
       image = Image.from(imgSrc); // make a copy
