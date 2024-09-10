@@ -600,7 +600,7 @@ class Generator {
 
     Image image;
     if (!isDoubleDensity) {
-      int size = 576 ~/ 2;
+      int size = 600 ~/ 2;
       if (_paperSize == PaperSize.mm58) {
         size = 384 ~/ 2;
       } else if (_paperSize == PaperSize.mm72) {
@@ -611,7 +611,7 @@ class Generator {
         imgSrc,
         // height: imgSrc.height,
         width: size,
-        interpolation: Interpolation.average,
+        interpolation: Interpolation.linear,
       );
     } else {
       image = Image.from(imgSrc); // make a copy
