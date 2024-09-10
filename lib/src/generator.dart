@@ -611,7 +611,7 @@ class Generator {
         imgSrc,
         // height: imgSrc.height,
         width: size,
-        interpolation: Interpolation.nearest,
+        interpolation: Interpolation.average,
       );
     } else {
       image = Image.from(imgSrc); // make a copy
