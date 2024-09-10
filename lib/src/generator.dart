@@ -1,8 +1,10 @@
 import 'dart:convert';
 import 'dart:typed_data' show Uint8List;
+
+import 'package:esc_pos_utils_plus/esc_pos_utils_plus.dart';
 import 'package:flutter/services.dart';
 import 'package:image/image.dart';
-import 'package:esc_pos_utils_plus/esc_pos_utils_plus.dart';
+
 import 'commands.dart';
 
 class Generator {
@@ -605,8 +607,12 @@ class Generator {
         size = 512 ~/ 2;
       }
 
-      image =
-          copyResize(imgSrc, width: size, interpolation: Interpolation.linear);
+      image = copyResize(
+        imgSrc,
+        height: imgSrc.height,
+        width: size,
+        interpolation: Interpolation.cubic,
+      );
     } else {
       image = Image.from(imgSrc); // make a copy
     }
