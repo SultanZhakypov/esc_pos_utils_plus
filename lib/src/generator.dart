@@ -141,7 +141,7 @@ class Generator {
 
     // Create a black bottom layer
     final biggerImage = copyResize(image,
-        width: widthPx, height: heightPx, interpolation: Interpolation.average);
+        width: widthPx, height: heightPx, interpolation: Interpolation.linear);
     //fill(biggerImage, color: ColorRgb8(0, 0, 0));
     fill(biggerImage, color: ColorRgb8(0, 0, 0));
     // Insert source image into bigger one
@@ -609,9 +609,9 @@ class Generator {
 
       image = copyResize(
         imgSrc,
-        height: imgSrc.height * 2,
+        height: imgSrc.height ~/ 0.7,
         width: size,
-        interpolation: Interpolation.average,
+        interpolation: Interpolation.linear,
       );
     } else {
       image = Image.from(imgSrc); // make a copy
